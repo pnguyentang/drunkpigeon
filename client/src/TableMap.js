@@ -1,12 +1,12 @@
 import React from 'react';
-import { useParams, useHistory } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 
 function TableMap() {
   const { tableId } = useParams();
-  const history = useHistory();
+  const navigate = useNavigate();
 
   const handleTableClick = (receiverTable) => {
-    history.push(`/send-drink/${tableId}/${receiverTable}`);
+    navigate(`/send-drink/${tableId}/${receiverTable}`);
   };
 
   return (

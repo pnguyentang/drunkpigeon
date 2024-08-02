@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import TableMap from './TableMap';
 import DrinkSelection from './DrinkSelection';
 import Confirmation from './Confirmation';
@@ -7,11 +7,11 @@ import Confirmation from './Confirmation';
 function App() {
   return (
     <Router>
-      <Switch>
-        <Route path="/table/:tableId" component={TableMap} />
-        <Route path="/send-drink/:tableId/:receiverTable" component={DrinkSelection} />
-        <Route path="/confirmation" component={Confirmation} />
-      </Switch>
+      <Routes>
+        <Route path="/table/:tableId" element={<TableMap />} />
+        <Route path="/send-drink/:tableId/:receiverTable" element={<DrinkSelection />} />
+        <Route path="/confirmation" element={<Confirmation />} />
+      </Routes>
     </Router>
   );
 }
